@@ -29,3 +29,11 @@ body {
   visibility: visible;
   height: auto;
 }
+
+#login-box {
+  margin-bottom: 100px;
+}
+
+#darklight {
+  font-size: 24px;
+}

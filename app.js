@@ -4,6 +4,7 @@ const closeBtn = document.getElementById("close");
 const idForm = document.getElementById("id-form");
 const pwForm = document.getElementById("pw-form");
 const loginBtn = document.getElementById("loginbtn");
+const changeBtn = document.getElementById("darklight");
 
 const handleClick = () => {
   const ul = document.getElementsByClassName("list-group")[0];
@@ -30,6 +31,19 @@ const clickLogin = (event) => {
   }
 };
 
+let click = 0;
+const handleChangeBtnName = () => {
+  click += 1;
+  if (click % 2 === 1) {
+    changeBtn.innerText = "Light 🔄";
+  } else {
+    changeBtn.innerText = "Dark 🔄";
+  }
+  console.log(click);
+};
+
 btn.addEventListener("click", handleClick);
 closeBtn.addEventListener("click", closeModal);
 loginBtn.addEventListener("click", clickLogin);
+
+changeBtn.addEventListener("click", handleChangeBtnName);
