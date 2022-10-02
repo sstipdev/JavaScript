@@ -117,6 +117,24 @@ const handleBack = () => {
   }
 };
 
+const convertTimeMs = (min, sec) => {
+  min = min * 60;
+  const total = min + sec;
+  return total * 1000;
+};
+
+const sale = (money, boolean) => {
+  if (boolean === false) {
+    money = Math.floor(money * 0.9);
+  } else {
+    let firstmoney = money * 0.9;
+    money = Math.floor(firstmoney * 0.85);
+  }
+  return money;
+};
+
+console.log(sale(10, true));
+
 btn.addEventListener("click", handleClick);
 closeBtn.addEventListener("click", closeModal);
 loginBtn.addEventListener("click", clickLogin);
