@@ -30,6 +30,16 @@ body {
   height: auto;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
 #login-box {
   margin-bottom: 100px;
 }
@@ -50,4 +60,13 @@ body {
 
 .slide-box img {
   width: 100%;
+}
+.live-height-box {
+  width: 100%;
+}
+
+.live-heigth {
+  width: 3px;
+  background-color: red;
+  height: 3px;
 }

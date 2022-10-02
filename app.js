@@ -14,6 +14,8 @@ const slideBtn3 = document.querySelector(".slide-3");
 const slideNext = document.querySelector(".slide-next");
 const slideBack = document.querySelector(".slide-back");
 
+const lorem = document.querySelector(".lorem");
+
 const handleClick = () => {
   const ul = document.getElementsByClassName("list-group")[0];
   ul.classList.toggle("show-menu");
@@ -133,7 +135,23 @@ const sale = (money, boolean) => {
   return money;
 };
 
-console.log(sale(10, true));
+const getScroll = () => {
+  const logo = document.querySelector(".navbar-brand");
+  if (window.scrollY >= 100) {
+    logo.style.fontSize = "35px";
+  } else {
+    logo.style.fontSize = "25px";
+  }
+};
+
+const loremScroll = () => {
+  const first = Math.floor(lorem.scrollTop) + 100;
+  const second = lorem.scrollHeight;
+  console.log(first, second);
+  if (first === second) {
+    alert("와 !");
+  }
+};
 
 btn.addEventListener("click", handleClick);
 closeBtn.addEventListener("click", closeModal);
@@ -146,3 +164,6 @@ slideBtn2.addEventListener("click", handleSlide2);
 slideBtn3.addEventListener("click", handleSlide3);
 slideNext.addEventListener("click", handleNext);
 slideBack.addEventListener("click", handleBack);
+
+window.addEventListener("scroll", getScroll);
+lorem.addEventListener("scroll", loremScroll);
