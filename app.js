@@ -8,6 +8,12 @@ const changeBtn = document.getElementById("darklight");
 
 const hideAlert = document.querySelector(".alert");
 
+const slideBtn1 = document.querySelector(".slide-1");
+const slideBtn2 = document.querySelector(".slide-2");
+const slideBtn3 = document.querySelector(".slide-3");
+const slideNext = document.querySelector(".slide-next");
+const slideBack = document.querySelector(".slide-back");
+
 const handleClick = () => {
   const ul = document.getElementsByClassName("list-group")[0];
   ul.classList.toggle("show-menu");
@@ -72,10 +78,53 @@ const hideAlertBox = () => {
   }, 1000);
 };
 
-hideAlertBox();
+const handleSlide1 = () => {
+  const container = document.querySelector(".slide-container");
+  container.style.transform = "translateX(0)";
+};
+
+const handleSlide2 = () => {
+  const container = document.querySelector(".slide-container");
+  container.style.transform = "translateX(-100vw)";
+};
+
+const handleSlide3 = () => {
+  const container = document.querySelector(".slide-container");
+  container.style.transform = "translateX(-200vw)";
+};
+
+let nowCount = 1;
+let place = 0;
+
+const handleNext = () => {
+  const container = document.querySelector(".slide-container");
+  if (nowCount === 1) {
+    place -= 100;
+    container.style.transform = `translateX(${place}vw)`;
+  }
+};
+
+const handleBack = () => {
+  const container = document.querySelector(".slide-container");
+  if (nowCount === 1) {
+    container.style.transform = "translateX(-200vw)";
+    nowCount += 1;
+  } else if (nowCount === 2) {
+    container.style.transform = "translateX(-100vw)";
+    nowCount += 1;
+  } else if (nowCount === 3) {
+    container.style.transform = "translateX(0)";
+  }
+};
 
 btn.addEventListener("click", handleClick);
 closeBtn.addEventListener("click", closeModal);
 loginBtn.addEventListener("click", clickLogin);
 
 changeBtn.addEventListener("click", handleChangeBtnName);
+
+slideBtn1.addEventListener("click", handleSlide1);
+slideBtn2.addEventListener("click", handleSlide2);
+slideBtn3.addEventListener("click", handleSlide3);
+slideNext.addEventListener("click", handleNext);
+slideBack.addEventListener("click", handleBack);
