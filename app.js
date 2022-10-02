@@ -6,6 +6,8 @@ const pwForm = document.getElementById("pw-form");
 const loginBtn = document.getElementById("loginbtn");
 const changeBtn = document.getElementById("darklight");
 
+const hideAlert = document.querySelector(".alert");
+
 const handleClick = () => {
   const ul = document.getElementsByClassName("list-group")[0];
   ul.classList.toggle("show-menu");
@@ -41,6 +43,25 @@ const handleChangeBtnName = () => {
   }
   console.log(click);
 };
+
+// hideAlert.innertext = `${--count}초 초 이내 구매시 사은품 증정!
+
+let count = 5;
+let clear = 6;
+const hideAlertBox = () => {
+  const spantext = document.querySelector(".time");
+
+  const timePut = setInterval(() => {
+    count -= 1;
+    spantext.innerText = count;
+    if (count === 0) {
+      hideAlert.hidden = true;
+      clearTimeout(timePut);
+    }
+  }, 1000);
+};
+
+hideAlertBox();
 
 btn.addEventListener("click", handleClick);
 closeBtn.addEventListener("click", closeModal);
