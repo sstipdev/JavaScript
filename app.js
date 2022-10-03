@@ -30,16 +30,16 @@ const clickLogin = (event) => {
   const idValue = idForm.value;
   const pwValue = pwForm.value;
   let reg_name4 = /[A-Z]/g; // 영문 대문자만
-  if (!/\S+@\S+.\S+/.test(idForm.value)) {
-    alert("와");
-  } else {
-    alert("헐");
-  }
-  if (reg_name4.test(pwForm.value)) {
-    alert("비번에 대문자가있다");
-  } else {
-    alert("eㅐ문자가 없네");
-  }
+  // if (!/\S+@\S+.\S+/.test(idForm.value)) {
+  //   alert("와");
+  // } else {
+  //   alert("헐");
+  // }
+  // if (reg_name4.test(pwForm.value)) {
+  //   alert("비번에 대문자가있다");
+  // } else {
+  //   alert("eㅐ문자가 없네");
+  // }
   if (idValue === "" && pwValue === "") {
     event.preventDefault();
     alert("아이디와 비밀번호가 공백 입니다.");
