@@ -28,10 +28,10 @@ const itmeSail = document.querySelector(".itemsail");
 
 const car = {
   name: "소나타",
-  price: 5000,
+  price: [5000, 3000, 4000],
   sail: 10,
 };
 
 itemName.innerHTML = car.name;
-itmePrice.innerHTML = car.price;
+itmePrice.innerHTML = car.price[0];
 itmeSail.innerHTML = `${car.sail} % 할인중`;
