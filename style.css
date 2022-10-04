@@ -71,3 +71,7 @@ body {
   background-color: red;
   height: 3px;
 }
+
+.hide-option {
+  display: none;
+}
