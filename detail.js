@@ -2,24 +2,33 @@ const btn = $(".tab-button");
 const content = $(".tab-content");
 const lgh = $(".tab-button").length;
 
-const shirtBtn = document.querySelectorAll(".form-select")[0];
-
-const shirttest = (e) => {
-  const value = e.target.value;
-  const hideShirtOption = document.querySelectorAll(".form-select")[1];
-  const hideHatOption = document.querySelectorAll(".form-select")[2];
-  if (value === "셔츠") {
-    hideShirtOption.classList.remove("hide-option");
-  } else {
-    hideShirtOption.classList.add("hide-option");
-  }
-  if (value === "모자") {
-    hideHatOption.classList.remove("hide-option");
-  } else {
-    hideHatOption.classList.add("hide-option");
-  }
+const objasd = {
+  name: "와",
+  age: 20,
 };
-shirtBtn.addEventListener("input", shirttest);
+
+for (const key in objasd) {
+  console.log(objasd[key]);
+}
+
+// const shirtBtn = document.querySelectorAll(".form-select")[0];
+
+// const shirttest = (e) => {
+//   const value = e.target.value;
+//   const hideShirtOption = document.querySelectorAll(".form-select")[1];
+//   const hideHatOption = document.querySelectorAll(".form-select")[2];
+//   if (value === "셔츠") {
+//     hideShirtOption.classList.remove("hide-option");
+//   } else {
+//     hideShirtOption.classList.add("hide-option");
+//   }
+//   if (value === "모자") {
+//     hideHatOption.classList.remove("hide-option");
+//   } else {
+//     hideHatOption.classList.add("hide-option");
+//   }
+// };
+// shirtBtn.addEventListener("input", shirttest);
 
 // for (let i = 0; i < lgh; i++) {
 //   btn.eq(i).on("click", function () {
