@@ -30,22 +30,21 @@ function multiple() {
 
 // const sum = num10.reduce((a, b) => a + b);
 
-// 평균점수 계산기 만들기는 아직 못품 이건 다시 풀 예정.
+function grade(arr, b) {
+  var result = 0;
 
-let inpyo = [];
-function grade(one, two, three, result) {
-  inpyo = [one, two, three];
-  const total = inpyo.reduce((a, b) => a + b);
-  console.log(total);
-  if (total > result) {
-    console.log("이번 시험 개망침");
+  for (let i = 0; i < arr.length; i++) {
+    result = result + arr[i];
+  }
+
+  if (result / arr.length < b) {
+    console.log("올랐네요");
   } else {
-    console.log("이번시험 잘침");
+    console.log("같거나 떨어졌네요 재수추천");
   }
 }
 
-grade(10, 10, 10, 2);
-
+grade([2, 3, 4], 10); //올랐네요 출력될듯
 // const shirtBtn = document.querySelectorAll(".form-select")[0];
 
 // const shirttest = (e) => {
