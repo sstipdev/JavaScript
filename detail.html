@@ -102,6 +102,23 @@
     </div>
 
     <script>
+      $.get("https://codingapple1.github.io/price.json")
+        .done((data) => {
+          console.log("서버연결 성공 !", data.price);
+        })
+        .fail(() => {
+          console.log("실패했습니다.");
+        });
+
+      fetch("https://codingapple1.github.io/price.json")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data.price);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
       const pants = [28, 30, 32];
       const shirts = [95, 100, 105];
       $(".form-select")

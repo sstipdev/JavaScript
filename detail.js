@@ -44,7 +44,7 @@ function grade(arr, b) {
   }
 }
 
-grade([2, 3, 4], 10); //올랐네요 출력될듯
+// grade([2, 3, 4], 10); //올랐네요 출력될듯
 // const shirtBtn = document.querySelectorAll(".form-select")[0];
 
 // const shirttest = (e) => {
