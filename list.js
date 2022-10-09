@@ -79,7 +79,6 @@ $(".buy").click(function (e) {
   } else {
     localStorage.setItem(KEYNAME, convertCartObject);
   }
-  console.log(getItem);
 });
 
 const getInfoItem = (data) => {

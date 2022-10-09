@@ -7,11 +7,17 @@
     <title>장바구니</title>
   </head>
   <body>
-    <div>장바구니 페이지</div>
+    <div class="cart">장바구니 페이지</div>
     <script>
-      const p = document.createElement("p");
       const KEYNAME = "장바구니";
       const getItem = localStorage.getItem(KEYNAME);
+      for (let i = 0; i < 5; i++) {
+        const p = document.createElement("p");
+        const cartbox = document.querySelector(".cart");
+        cartbox.appendChild(p);
+        p.innerHTML = getItem;
+        console.log(p);
+      }
     </script>
   </body>
 </html>
