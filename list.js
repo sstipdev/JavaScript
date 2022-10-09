@@ -41,20 +41,46 @@ for (let i = 0; i < products.length; i++) {
   const img = document.createElement("img");
   const titleH5 = document.createElement("h5");
   const priceP = document.createElement("p");
+  const buyBtn = document.createElement("button");
 
   divCol.classList.add("col-sm-4");
   img.src = "https://via.placeholder.com/600";
   img.classList.add("w-100");
+  buyBtn.classList.add("buy");
 
   titleH5.innerText = `상품명 : ${products[i].title}`;
   priceP.innerText = `가격 : ${products[i].price} 원`;
+  buyBtn.innerText = "구매하기";
 
   divCol.appendChild(img);
   divCol.appendChild(titleH5);
   divCol.appendChild(priceP);
+  divCol.appendChild(buyBtn);
 
   divRow.appendChild(divCol);
 }
+
+$(".buy").click(function (e) {
+  const KEYNAME = "장바구니";
+  const getItem = localStorage.getItem(KEYNAME);
+  const cartObject = [
+    {
+      title: $(e.target).siblings("h5").text(),
+      price: $(e.target).siblings("p").text(),
+    },
+  ];
+
+  // const cartObject = [$(e.target).siblings("h5").text(), $(e.target).siblings("p").text()];
+  const convertCartObject = JSON.stringify(cartObject);
+  if (getItem != null) {
+    const outItem = JSON.parse(localStorage.getItem(KEYNAME));
+    outItem.push(cartObject);
+    localStorage.setItem(KEYNAME, JSON.stringify(outItem));
+  } else {
+    localStorage.setItem(KEYNAME, convertCartObject);
+  }
+  console.log(getItem);
+});
 
 const getInfoItem = (data) => {
   for (let i = 0; i < data.length; i++) {
